@@ -8,25 +8,30 @@ interface Article {
   date?: string;
 }
 
-// 記事リンクのサンプル（後で実際のnote記事に更新）
 const articles: Article[] = [
   {
-    title: 'GT7データ分析の始め方',
-    description: 'グランツーリスモ7のテレメトリーデータを活用したデータ分析の基礎知識と手法を紹介',
-    link: '#',
-    date: '2026-03-01',
+    title: '【GT7×英語学習】デイリーレースB解説から学ぶフレーズ5選 (2026 Week10)',
+    description: 'GT7の解説動画からプロコーチが使う英語フレーズを5つ厳選。「Break in a straight line」など、走りながら英語もインプットできる実践的な内容。',
+    link: 'https://note.com/toolstudio22/n/nc4e7a99296fe',
+    date: '2026-03-07',
   },
   {
-    title: 'GT7 Monitorの使い方',
-    description: 'リアルタイムモニタリングツールの詳細な使用方法とカスタマイズのヒント',
-    link: '#',
-    date: '2026-02-15',
+    title: '【GT7×Python】タイヤの限界を可視化！摩擦円とヒートマップでテレメトリを強化してみた',
+    description: 'タイヤのグリップ状態を摩擦円とヒートマップで可視化。スリップ率・サスペンション高さのリアルタイム分析機能を追加したダッシュボード拡張編。',
+    link: 'https://note.com/toolstudio22/n/n5faa85505742',
+    date: '2026-03-07',
   },
   {
-    title: 'セッティング最適化のコツ',
-    description: 'データに基づいた車両セッティングの最適化手法を解説',
-    link: '#',
-    date: '2026-02-01',
+    title: '【GT7×Python】走行データをリアルタイム可視化！Streamlitで作る自作ダッシュボード',
+    description: 'PythonとStreamlitでGT7の走行データ（速度・RPM・スロットルなど）をブラウザ上にリアルタイム表示するダッシュボードの構築方法を解説。',
+    link: 'https://note.com/toolstudio22/n/n0230cfe5c375',
+    date: '2026-03-02',
+  },
+  {
+    title: '【Streamlit最新情報】v1.54.0アップデート詳解！UI開発がより直感的に',
+    description: 'ウィジェットの状態維持改善・エリアチャートのstack対応など、Streamlit v1.54.0の注目ポイントをエンジニア視点で解説。',
+    link: 'https://note.com/toolstudio22/n/ndca856d5ce2a',
+    date: '2026-02-24',
   },
 ];
 
