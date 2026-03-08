@@ -1,0 +1,81 @@
+import Card from '../ui/Card';
+import Button from '../ui/Button';
+
+interface Tool {
+  title: string;
+  description: string;
+  tags: string[];
+  link: string;
+  image?: string;
+}
+
+const tools: Tool[] = [
+  {
+    title: 'GT7 Monitor',
+    description: 'リアルタイムでグランツーリスモ7のテレメトリーデータを可視化・記録するモニタリングツール。車両情報、速度、エンジン回転数などをグラフ表示。',
+    tags: ['Python', 'リアルタイム', 'テレメトリー'],
+    link: 'https://github.com/toolstudio22/gt7_monitor',
+  },
+  // 将来的に追加のツール
+  // {
+  //   title: 'セッティング計算機',
+  //   description: 'ギア比、ダウンフォース、サスペンションの最適値を計算',
+  //   tags: ['計算機', 'セッティング'],
+  //   link: '#',
+  // },
+];
+
+export default function ToolGrid() {
+  return (
+    <section id="tools" className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            開発ツール
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            GT7のデータ活用を支援する自作ツール集
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {tools.map((tool) => (
+            <Card key={tool.title}>
+              <div className="flex flex-col h-full">
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  {tool.title}
+                </h3>
+                <p className="text-gray-600 mb-4 flex-grow">
+                  {tool.description}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {tool.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1 bg-blue-100 text-[var(--color-primary)] text-sm rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <Button variant="outline" size="sm" className="w-full">
+                  <a
+                    href={tool.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 w-full"
+                  >
+                    <span>詳細を見る</span>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </Button>
+              </div>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

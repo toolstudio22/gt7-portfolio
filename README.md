@@ -1,36 +1,123 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GT7 Analysis Portfolio
 
-## Getting Started
+グランツーリスモ7（Gran Turismo 7）のデータ分析ツールと技術情報を提供する個人ポートフォリオサイトです。
 
-First, run the development server:
+## 🚀 特徴
+
+- **モダンなUI**: Next.js 16 + React 19 + Tailwind CSS 4で構築
+- **レスポンシブデザイン**: モバイルからデスクトップまで最適化
+- **SEO対応**: メタデータ、sitemap、robots.txtを完備
+- **高速**: App RouterとTurbopackによる高速な開発・ビルド体験
+- **TypeScript**: 型安全な開発環境
+
+## 📦 技術スタック
+
+- **フレームワーク**: Next.js 16.1.6
+- **UI**: React 19.2.3
+- **スタイリング**: Tailwind CSS 4
+- **言語**: TypeScript 5
+- **デプロイ**: Vercel
+
+## 🛠️ セットアップ
+
+### 前提条件
+
+- Node.js 18以上
+- npm または yarn
+
+### インストール
 
 ```bash
+# 依存関係のインストール
+npm install
+
+# 開発サーバーの起動
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ブラウザで [http://localhost:3000](http://localhost:3000) を開いてサイトを確認できます。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### ビルド
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# 本番用ビルド
+npm run build
 
-## Learn More
+# 本番サーバーの起動
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Lint
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# ESLintの実行
+npm run lint
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📁 プロジェクト構造
 
-## Deploy on Vercel
+```
+gt7-portfolio/
+├── app/                    # Next.js App Router
+│   ├── layout.tsx         # ルートレイアウト
+│   ├── page.tsx           # トップページ
+│   ├── tools/             # ツール一覧ページ
+│   ├── globals.css        # グローバルスタイル
+│   ├── robots.ts          # robots.txt生成
+│   └── sitemap.ts         # sitemap.xml生成
+├── components/
+│   ├── ui/                # 基本UIコンポーネント
+│   │   ├── Button.tsx
+│   │   ├── Card.tsx
+│   │   ├── Header.tsx
+│   │   └── Footer.tsx
+│   └── sections/          # ページセクション
+│       ├── Hero.tsx
+│       ├── ToolGrid.tsx
+│       ├── ArticleLinks.tsx
+│       └── About.tsx
+├── public/                # 静的ファイル
+└── package.json
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🎨 デザインシステム
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### カラーパレット
+
+- **Primary**: `#3b82f6` (ブルー)
+- **Primary Light**: `#60a5fa`
+- **Primary Dark**: `#2563eb`
+- **Secondary**: `#0ea5e9`
+- **Accent**: `#06b6d4`
+
+カラーはTailwind CSS 4の`@theme`ディレクティブで定義されています。
+
+## 📝 コンテンツの更新
+
+### ツールの追加
+
+`components/sections/ToolGrid.tsx`および`app/tools/page.tsx`のtoolsリストに新しいツールオブジェクトを追加してください。
+
+### 記事の追加
+
+`components/sections/ArticleLinks.tsx`のarticlesリストに新しい記事オブジェクトを追加してください。
+
+## 🚀 デプロイ
+
+### Vercelへのデプロイ
+
+1. GitHubリポジトリにプッシュ
+2. [Vercel](https://vercel.com)でプロジェクトをインポート
+3. 自動的にビルド・デプロイされます
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/your-username/gt7-portfolio)
+
+## 📄 ライセンス
+
+このプロジェクトは個人用ポートフォリオサイトです。
+
+## 🔗 関連リンク
+
+- [GT7 Monitor](https://github.com/toolstudio22/gt7_monitor) - リアルタイムテレメトリーモニタリングツール
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
