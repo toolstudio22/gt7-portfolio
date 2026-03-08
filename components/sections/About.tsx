@@ -7,27 +7,31 @@ export default function About() {
         <FadeIn>
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            About
-          </h2>
-        </div>
+              About
+            </h2>
+          </div>
+        </FadeIn>
 
-        <div className="prose prose-lg max-w-none">
-          <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-8 mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+        <div className="prose prose-lg max-w-none dark:prose-invert">
+          <FadeIn delay={200}>
+            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-gray-800 dark:to-gray-700 rounded-xl p-8 mb-8">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
               このサイトについて
             </h3>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               GT7 Analysisは、グランツーリスモ7（Gran Turismo 7）のデータ分析ツールや技術情報を提供する個人ポートフォリオサイトです。
               リアルタイムモニタリング、データビジュアライゼーション、セッティング最適化など、GT7プレイヤーがより深くゲームを楽しむためのツールとノウハウを共有しています。
             </p>
-          </div>
+            </div>
+          </FadeIn>
 
+          <FadeIn delay={400}>
           <div className="space-y-6">
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
                 提供しているツール
               </h3>
-              <ul className="space-y-3 text-gray-700">
+              <ul className="space-y-3 text-gray-700 dark:text-gray-300">
                 <li className="flex items-start">
                   <svg className="w-6 h-6 text-[var(--color-primary)] mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -44,14 +48,14 @@ export default function About() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
                 技術スタック
               </h3>
               <div className="flex flex-wrap gap-3">
                 {['Python', 'Next.js', 'TypeScript', 'Tailwind CSS', 'データビジュアライゼーション'].map((tech) => (
                   <span
                     key={tech}
-                    className="px-4 py-2 bg-blue-100 text-[var(--color-primary)] font-medium rounded-lg"
+                    className="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-[var(--color-primary)] dark:text-blue-300 font-medium rounded-lg"
                   >
                     {tech}
                   </span>
@@ -59,11 +63,11 @@ export default function About() {
               </div>
             </div>
 
-            <div className="bg-gray-50 rounded-xl p-6 mt-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">
+            <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-6 mt-8">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
                 Contact
               </h3>
-              <p className="text-gray-700 mb-4">
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 ツールに関するご質問やフィードバックは、GitHubリポジトリのIssuesまでお願いします。
               </p>
               <a
@@ -79,6 +83,7 @@ export default function About() {
               </a>
             </div>
           </div>
+          </FadeIn>
         </div>
       </div>
     </section>

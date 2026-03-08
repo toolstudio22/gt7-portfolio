@@ -58,28 +58,29 @@ export default function ArticleLinks() {
                   <div className="flex flex-col h-full">
                     {article.date && (
                       <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
-                      {new Date(article.date).toLocaleDateString('ja-JP', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric',
-                      })}
+                        {new Date(article.date).toLocaleDateString('ja-JP', {
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric',
+                        })}
+                      </p>
+                    )}
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                      {article.title}
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-300 mb-4 flex-grow">
+                      {article.description}
                     </p>
-                  )}
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                    {article.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4 flex-grow">
-                    {article.description}
-                  </p>
-                  <div className="flex items-center text-[var(--color-primary)] font-medium">
-                    記事を読む
-                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
+                    <div className="flex items-center text-[var(--color-primary)] font-medium">
+                      記事を読む
+                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
                   </div>
-                </div>
-              </Card>
-            </a>
+                </Card>
+              </a>
+            </FadeIn>
           ))}
         </div>
       </div>

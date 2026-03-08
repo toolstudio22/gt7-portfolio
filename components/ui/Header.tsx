@@ -63,15 +63,15 @@ export default function Header() {
             </button>
           </div>
         </div>
- dark:border-gray-700">
+
+        {/* モバイルメニュー */}
+        {isOpen && (
+          <div className="md:hidden border-t border-gray-200 dark:border-gray-700">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block py-2 px-4 text-gray-700 dark:text-gray-3
-                key={link.href}
-                href={link.href}
-                className="block py-2 px-4 text-gray-700 hover:bg-[var(--color-muted)] hover:text-[var(--color-primary)] rounded-lg transition-colors"
+                className="block py-2 px-4 text-gray-700 dark:text-gray-300 hover:bg-[var(--color-muted)] hover:text-[var(--color-primary)] rounded-lg transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
