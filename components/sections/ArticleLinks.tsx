@@ -1,4 +1,5 @@
 import Card from '../ui/Card';
+import FadeIn from '../ui/FadeIn';
 
 interface Article {
   title: string;
@@ -31,30 +32,32 @@ const articles: Article[] = [
 
 export default function ArticleLinks() {
   return (
-    <section id="articles" className="py-20 bg-gray-50">
+    <section id="articles" className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            技術記事
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            データ分析やツール開発のノウハウを共有
-          </p>
-        </div>
+        <FadeIn>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              技術記事
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              データ分析やツール開発のノウハウを共有
+            </p>
+          </div>
+        </FadeIn>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {articles.map((article) => (
-            <a
-              key={article.title}
-              href={article.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block"
-            >
-              <Card>
-                <div className="flex flex-col h-full">
-                  {article.date && (
-                    <p className="text-sm text-gray-500 mb-2">
+          {articles.map((article, index) => (
+            <FadeIn key={article.title} delay={200 + index * 100}>
+              <a
+                href={article.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <Card>
+                  <div className="flex flex-col h-full">
+                    {article.date && (
+                      <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
                       {new Date(article.date).toLocaleDateString('ja-JP', {
                         year: 'numeric',
                         month: 'long',
@@ -62,10 +65,10 @@ export default function ArticleLinks() {
                       })}
                     </p>
                   )}
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
                     {article.title}
                   </h3>
-                  <p className="text-gray-600 mb-4 flex-grow">
+                  <p className="text-gray-600 dark:text-gray-300 mb-4 flex-grow">
                     {article.description}
                   </p>
                   <div className="flex items-center text-[var(--color-primary)] font-medium">

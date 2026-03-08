@@ -11,7 +11,7 @@ export default function Card({ children, className = '', hover = true }: CardPro
   
   return (
     <div
-      className={`bg-white rounded-xl shadow-lg p-6 transition-all duration-300 ${hoverStyles} ${className}`}
+      className={`bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transition-all duration-300 ${hoverStyles} ${className}`}
     >
       {children}
     </div>

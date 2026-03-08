@@ -1,5 +1,6 @@
 import Card from '../ui/Card';
 import Button from '../ui/Button';
+import FadeIn from '../ui/FadeIn';
 
 interface Tool {
   title: string;
@@ -27,22 +28,25 @@ const tools: Tool[] = [
 
 export default function ToolGrid() {
   return (
-    <section id="tools" className="py-20 bg-white">
+    <section id="tools" className="py-20 bg-white dark:bg-gray-950 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            開発ツール
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            GT7のデータ活用を支援する自作ツール集
-          </p>
-        </div>
+        <FadeIn>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              開発ツール
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              GT7のデータ活用を支援する自作ツール集
+            </p>
+          </div>
+        </FadeIn>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {tools.map((tool) => (
-            <Card key={tool.title}>
-              <div className="flex flex-col h-full">
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+          {tools.map((tool, index) => (
+            <FadeIn key={tool.title} delay={200 + index * 100}>dark:text-white mb-3">
+                  {tool.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-3ont-bold text-gray-900 mb-3">
                   {tool.title}
                 </h3>
                 <p className="text-gray-600 mb-4 flex-grow">
@@ -73,6 +77,7 @@ export default function ToolGrid() {
                 </Button>
               </div>
             </Card>
+          </FadeIn>
           ))}
         </div>
       </div>
